@@ -1,0 +1,53 @@
+@import 'https://fonts.googleapis.com/css?family=Yellowtail';
+
+body {
+    font-family: 'Yellowtail', cursive;
+}
+
+html{
+	background: url(../img/bg.jpg) no-repeat center center fixed;
+	background-size: cover;
+	-webkit-background-size: color;
+	-moz-background-size: color;
+	-o-background-size: color;
+}
+
+
+div.container{
+	width: 900px;
+	margin: 0 auto;
+}
+
+div.polaroid{
+	position: relative;
+	width: 240px;
+	display:inline-block;
+	margin: 20px;
+}
+
+.polaroid img{
+	width:100%;
+	height:auto;
+	border: 10px solid #FEF9EF;
+	border-bottom: 45px solid #FEF9EF;
+	/*box shadow - h-shadow | v- shadow | blur | shadow | color */
+	box-shadow: 3px 3px 5px 5px rgba(255, 255, 255, 0.2)
+
+}
+
+/* absolute positoning of an element is based on the browser dimensions */
+/* relative positioning is relative to where it would have rendered by default */
+/* if you want to position an element relative to its container, the element 
+gets positioned absolite, and tis parent/container gets position relative */
+
+.polaroid p{
+	text-align: center;
+	position:absolute;
+	bottom: 0px;
+	width: 100%;
+	/*left: 30px;*/
+}
+
+
+
+

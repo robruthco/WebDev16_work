@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inline v float</title>
+    <style type="text/css">
+    main,
+    article {
+        background-color: rgba(0, 0, 256, 0.2);
+    }
+    
+    main {
+        width: 900px;
+        margin: 0 auto;
+    }
+    
+    article {
+        /*   OG width: 300px;
+        height: 300px;*/
+        float: left;
+        border: 2px solid blue;
+        width: 276px;
+        height: 276px;
+        /* margin: 10px;*/
+        display: inline-block;
+        /*we can fix this extra space with 
+          a negative margin of -4px
+          OOOORRRRR 
+          adjust knowing we need to account for this subtract 4px from horizontal mgns
+        */
+        margin: 10px 8px;
+     
+
+    }
+    
+    .clear-fix:after {
+        display: block;
+        clear: both;
+        /* ensure some older compatability */
+        height: 0;
+        font-size: 0;
+        content: " ";
+        /* extra backup */
+        visibility: hidden;
+        /* 300-4 = 296*/
+    }
+    </style>
+</head>
+
+<body>
+    <main class="clear-fix">
+        <article>1</article>
+        <article>2</article>
+        <article>three</article>
+    </main>
+</body>
+
+</html>
