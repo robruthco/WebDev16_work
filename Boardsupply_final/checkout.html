@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <!-- animsition.css -->
+    <link rel="stylesheet" href="./dist/css/animsition.min.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- animsition.js -->
+    <script src="./dist/js/animsition.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Noticia+Text" rel="stylesheet">
+    
+    <script type="text/javascript">
+    function CalculateTax() {
+        var state = document.forms.txts.value;
+        // East Coast
+        if (state === "NJ" || state === "NY" || state === "ME" || state === "VT" || state === "NH" || state === "MA" || state === "RI" || state === "CT" || state === "DE" || state === "MD" || state === "PA") {
+            var final = 4.99;
+        }
+        // West Coast
+        if (state === "CA" || state === "WA" || state === "OR") {
+            var final = 9.99;
+        }
+        // bible belt
+        if (state === "WV" || state === "VA" || state === "NC" || state === "SC" || state === "GA" || state === "FL" || state === "AL" || state === "MS" || state === "LA" || state === "AR" || state === "TN" || state === "KY") {
+            var final = 5.99;
+        }
+        // midwest
+        if (state === "MT" || state === "WY" || state === "CO" || state === "NM" || state === "ID" || state === "UT" || state === "AZ" || state === "NV") {
+            var final = 7.99;
+        }
+        // trump's america
+        if (state === "OH" || state === "MI" || state === "IN" || state === "IL" || state === "MO" || state === "IA" || state === "MN" || state === "ND" || state === "SD" || state === "NE" || state === "KS" || state === "OK") {
+            var final = 6.99;
+        }
+        // noncontiguous
+        if (state === "AK" || state === "HI") {
+            var final = 15.99;
+        }
+        document.getElementById('res').value = final;
+        document.getElementById('res2').value = final + 87.09;
+    }
+    </script>
+</head>
+
+<body>
+    <h1><a href="index.html">BoardSupp.ly</a></h1>
+    <nav class="clear-fix">
+        <ul>
+            <li><a href="cart.html" class="cart">Cart (1)</a></li>
+            <li><a href="aboutus.html">About Us</a>
+            </li>
+            <li><a href="deck.html">Deck</a>
+            </li>
+            <li><a href="wheels.html">Wheels</a>
+            </li>
+            <li><a href="suspension.html">Trucks</a></li>
+        </ul>
+    </nav>
+    <h2 style="text-decoration:underline">Check Out</h2>
+    <h3>Blind Deck </br>
+    Total: 87.09$</h3>
+    <!-- Second Form -->
+    <h3>
+    <form name="forms" id="forma">
+        <table style="padding: 0px 0px 20px 80px;">
+            <tr>
+                <td>
+                    <label>Enter your state (NJ, NY)</label>
+                    <input type="text" name="txts" size=20>
+                    </br>
+                    <label>The shipping cost is: </label>
+                    <input type="text" name="resul" id="res">
+                    </br>
+                    <label>Your final total is: </label>
+                    <input type="text" name="resul2" id="res2">
+                </td>
+            </tr>
+            <tr>
+                <br>
+                <input class="myButton" type="button" id="input" value="Shipping Cost" onClick='CalculateTax();'>
+                </td>
+            </tr>
+        </table>
+        </h3>
+    <a href="https://squareup.com/store/ruth_paradox/item/blind-board" class="myButton">Purchase</a>
+</body>
+
+</html>

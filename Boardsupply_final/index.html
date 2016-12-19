@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Noticia+Text" rel="stylesheet">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <!-- Map Styling -->
+    <style>
+    #map {
+        height: 100%;
+    }
+    
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+    <!-- Geolocation Script -->
+    <script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "We can't get your location with this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+    }
+    // Map Systemr
+    var map;
+    var infowindow;
+
+    function initMap() {
+        var pyrmont = {
+            lat: 40.693,
+            lng: -73.985
+        };
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: pyrmont,
+            zoom: 16
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+            location: pyrmont,
+            radius: 500,
+            type: ['park']
+        }, callback);
+    }
+
+    function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+                createMarker(results[i]);
+            }
+        }
+    }
+
+    function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent(place.name);
+            infowindow.open(map, this);
+        });
+    }
+    </script>
+</head>
+
+<body>
+    <h1><a href="index.html">BoardSupp.ly</a></h1>
+    <nav class="clear-fix">
+        <ul>
+            <li><a href="aboutus.html">About Us</a>
+            </li>
+            <li><a href="deck.html">Deck</a>
+            </li>
+            <li><a href="wheels.html">Wheels</a>
+            </li>
+            <li><a href="suspension.html">Trucks</a></li>
+        </ul>
+    </nav>
+    <main>
+        <img src="img/skatenavcrop.jpg" width="1280" height="532" alt="skatenav" usemap="#mapname"></img>
+        <map name="mapname">
+            <area shape=Rect Coords=50,240,620,60 Href="deck.html">
+            <area shape=Rect Coords=637,227,961,182 Href="deck.html">
+            <area shape=Rect Coords=945,200,1220,120 Href="deck.html">
+            <area shape=Rect Coords=224,450,360,300 Href="wheels.html">
+            <area shape=Rect Coords=610,470,750,320 Href="wheels.html">
+            <area shape=Rect Coords=795,400,880,280 Href="wheels.html">
+            <area shape=Rect Coords=1090,400,1180,290 Href="wheels.html">
+            <area shape=Rect Coords=360,430,600,240 Href="suspension.html">
+            <area shape=Rect Coords=880,350,1085,230 Href="suspension.html">
+        </map>
+    </main>
+    <footer>
+        <a href="#">Facebook</a> <a href="#">Instagram</a> <a href="#">Youtube</a> <a href="#">Email</a> <a href="#">Twitter</a>
+    </footer>
+    <footer2><a>Find your nearest Skatepark:</a></footer2>
+    <!-- Coords button
+    <p>Click the button to find your nearest skatepark.</p>
+    <button onclick="getLocation()">Nearest Skatepark</button> -->
+    <p id="demo"></p>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLzGTx7pmITitiMBpdB9uLJJqudjevj_Y&libraries=places&callback=initMap" async defer></script>
+</body>
+
+</html>

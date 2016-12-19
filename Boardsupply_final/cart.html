@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <!-- animsition.css -->
+    <link rel="stylesheet" href="./dist/css/animsition.min.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- animsition.js -->
+    <script src="./dist/js/animsition.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Noticia+Text" rel="stylesheet">
+    <script type="text/javascript">
+    function CalculateTax() {
+        var price = 79.99
+        var sum = eval(price)
+        var tax = 0.08875 * sum;
+        var final = sum + tax;
+        document.getElementById('res').value = final.toFixed(2);
+    }
+    </script>
+</head>
+
+<body>
+    <h1><a href="index.html">BoardSupp.ly</a></h1>
+    <nav class="clear-fix">
+        <ul>
+            <li><a href="cart.html" class="cart">Cart (1)</a></li>
+            <li><a href="aboutus.html">About Us</a>
+            </li>
+            <li><a href="deck.html">Deck</a>
+            </li>
+            <li><a href="wheels.html">Wheels</a>
+            </li>
+            <li><a href="suspension.html">Trucks</a></li>
+        </ul>
+    </nav>
+    <h2 style="text-decoration:underline">Cart</h2>
+    <img class="page" src="img/deck/blind.jpg">
+    <h3>Blind Deck </br>
+    Total: 79.99$</h3>
+    <h3>
+    <form name="forms" id="forma">
+        <table>
+            <tr>
+                <td>
+                    <label>Total with Tax:</label>
+                    <input type="text" name="resul" id="res">
+                </td>
+            </tr>
+            <tr>
+                <br>
+                <input class="myButton" type="button" id="input" value="Total + Tax:" onClick='CalculateTax();'>
+                </td>
+            </tr>
+        </table>
+        </h3>
+
+    <!-- Tax Calculator -->
+    <a href="checkout.html" class="myButton">Check Out</a>
+</body>
+
+</html>
