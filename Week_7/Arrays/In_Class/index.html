@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arrays 101</title>
+    <script type="text/javascript">
+    var months;
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", ];
+
+    // months = [1,2,3,4,5];
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        el = document.getElementById("arrayStuff");
+
+
+        el.innerHTML = months.length;
+
+    });
+
+    var lastMonth = months.pop();
+    console.log("The month removed was " + lastMonth);
+    console.log(months.length);
+
+    //putitback
+    months.push(lastMonth)
+    console.log(months.length);
+
+    //grab the 6th month
+
+    console.log(months[5])
+
+    // loop
+    for (var i = 0; i < months.length; i++) {
+        console.log(months[i]);
+    }
+    // for (var i = months.length - 1; i >= 0; i--) {
+    // 	var dm = months.pop();
+    // 	var message = "we just removed "+dm+"from our yearm New array is: " + 
+    // 		months.length
+    // 	console.log(message);
+    // }
+    function randomNumber(n){
+    	var rn = Math.round(n*Math.random(n))
+    	return rn;
+    }
+
+    // var
+    alert(months[randomNumber(months.length-1)]);
+    </script>
+</head>
+
+<body>
+    <h3 id="arrayStuff">Nothing Yet....</h3>
+</body>
+
+</html>

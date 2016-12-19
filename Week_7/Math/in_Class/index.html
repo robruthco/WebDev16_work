@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Math</title>
+    <script type="text/javascript">
+    var x = 15;
+    var y = 35;
+
+    // simple maf 
+    //addition
+
+    console.log(x + y)
+    console.log(x - y)
+    console.log(x * y)
+    console.log(x / y)
+
+    //modular operator % it returns remainder
+    console.log(y % x)
+
+    //increment
+    x++;
+    console.log(x);
+
+
+    var num1 = 2.2;
+    var num2 = 3.3;
+
+    //access math object
+    console.log("*****************************");
+    console.log(Math.round(num2));
+    console.log(Math.floor(num2));
+    console.log(Math.ceil(num2));
+
+
+    //random
+    console.log("*****************************");
+    var rn = Math.random();
+    console.log("Davids super stoked on this random number: " + rn + "!!!!!!")
+    var something = Math.round(rn);
+    if (something === 0) {
+    	//alert("heads");
+    }else{
+    	//alert("tails");
+    }
+
+    //what if we want a number between 0 and 10?
+    function randomNumber(n){
+    	var rn = Math.round(n*Math.random(n))
+    	return rn;
+    }
+
+    var myRandomInt = randomNumber(1000);
+    //alert(myRandomInt);
+
+    function randomNumberRange(min, max){
+    	var rn = Math.round( Math.random()* (max-min) + min);
+    	return rn;
+    }
+    var rr= randomNumberRange(50,100));
+	console.log(rr);
+
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
